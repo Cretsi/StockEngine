@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Indicator Visualizer - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .indicator-checkbox {
+            display: inline-block;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+ 
+    <h1>Stonk Engine</h1>
+    <form method="post" action="{{ url_for('index') }}">
+        <label for="stock_ticker">Enter Stock Ticker:</label>
+        <input type="text" id="stock_ticker" name="stock_ticker">
+        <br>
+        <label>Select Indicators:</label><br>
+        <div class="indicator-checkbox">
+          <input type="checkbox" id="ichimoku" name="indicators" value="ichimoku">
+          <label for="ichimoku">Ichimoku</label>
+        </div>
+        <div class="indicator-checkbox">
+          <input type="checkbox" id="rsi" name="indicators" value="rsi">
+          <label for="rsi">RSI</label>
+        </div>
+        <div class="indicator-checkbox">
+          <input type="checkbox" id="macd" name="indicators" value="macd">
+          <label for="macd">MACD</label>
+        </div>
+        <div class="indicator-checkbox">
+          <input type="checkbox" id="bollinger" name="indicators" value="bollinger">
+          <label for="bollinger">Bollinger Bands</label>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
